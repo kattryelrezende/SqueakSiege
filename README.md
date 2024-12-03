@@ -58,7 +58,7 @@ O simulador usa o **método de Euler** para calcular as trajetórias dos corpos:
 Uma **singularidade** ocorre quando a distância 
 (r) entre dois corpos se aproxima de zero, resultando em uma força gravitacional infinita. Para evitar isso, o simulador adiciona uma pequena constante ε ao cálculo:
 
-$F = G \dfrac{(m_1 m_2)}{(r^2 + \epsilon )}$
+$F = G \cdot \dfrac{(m_1 m_2)}{(r^2 + \epsilon )}$
 
 ---
 
