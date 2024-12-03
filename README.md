@@ -31,7 +31,7 @@ $F = G \cdot \dfrac{(m_1 m_2)}{(r^2)}$
 Onde:
 - $F$: força gravitacional.
 - $G$: constante gravitacional.
-- $m_1$, m_2$: massas dos corpos.
+- $m_1$, $m_2$: massas dos corpos.
 - $r$: distância entre os corpos.
 
 A aceleração é calculada como:
@@ -42,11 +42,11 @@ $a$ = $\dfrac{F}{m}$
 O simulador usa o **método de Euler** para calcular as trajetórias dos corpos:
 - Atualiza a velocidade com base na aceleração:
   
-  $v_(nova) = v_(atual) + a \cdot \Delta t$
+  $v_{(nova)} = v_{(atual)} + a \cdot \Delta t$
   
 - Atualiza a posição com base na velocidade:
   
-  $x_(nova) = x_(atual) + v_(atual) \cdot \Delta t$
+  $x_{(nova)} = x_{(atual)} + v_{(atual)} \cdot \Delta t$
 
 #### **$\Delta t$ e Precisão**
 - Quanto menor o valor de $\Delta t$, mais precisa será a simulação.
@@ -58,7 +58,7 @@ O simulador usa o **método de Euler** para calcular as trajetórias dos corpos:
 Uma **singularidade** ocorre quando a distância 
 (r) entre dois corpos se aproxima de zero, resultando em uma força gravitacional infinita. Para evitar isso, o simulador adiciona uma pequena constante ε ao cálculo:
 
-$F = G \dfrac{(m_1 m_2)}{(r^2 + \episilon )}$
+$F = G \dfrac{(m_1 m_2)}{(r^2 + \epsilon )}$
 
 ---
 
