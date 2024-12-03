@@ -90,3 +90,7 @@ F = G (m_1 m_2)/(r^2 + ε)
 1. Clone este repositório:
    ```bash
    git clone https://github.com/seu-usuario/simulador-gravitacional.git
+
+### **CRÉDITOS**
+Marcos Cota        - 15511001
+Kattryel Rezende   - 15522383
