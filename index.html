@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Importação do arquivo CSS para estilização da página -->
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Squeak Siege</title>
+  </head>
+
+  <body>
+    <div class="title-canvas">
+      <!-- Título da aplicação -->
+      <h2>Simulação Orbital de Foguetes</h2>
+      <div class="canvas-forms">
+        <!-- Área de exibição do Canvas (simulação) e o formulário de controles -->
+        <canvas id="canvas"></canvas>
+        <div class="formulario">
+          <!-- Logo da aplicação -->
+          <img src="/src/sslogo.png" alt="Logo Squeak Siege" class="logo" />
+          
+          <!-- Controle de massa do planeta -->
+          <p id="p_planet_mass">Massa do planeta</p>
+          <input type="range" id="input_planet_mass" min="0"/>
+
+          <!-- Controle da velocidade do foguete -->
+          <p id="p_rocket_speed">Velocidade do foguete = 0</p>
+          <input type="range" id="input_rocket_speed" min="-100" max="100" step="1"/>
+
+          <!-- Controle de quantidade de passos futuros -->
+          <p id="p_precomputes">Qtd. de passos futuros</p>
+          <input type="range" id="input_precomputes" min="0"/>
+
+          <!-- Controle do intervalo de tempo por frame -->
+          <p id="p_time_step">Intervalos de tempo p/ frame</p>
+          <input type="range" id="input_time_step" min="0"/>
+
+          <!-- Controle da constante de gravidade -->
+          <p id="p_gravity">Constante de Gravidade</p>
+          <input type="range" id="input_gravity" min="0"/>
+          
+          <!-- Separador entre seções -->
+          <hr class="div-row">
+          
+          <div class="config">
+            <!-- Configurações avançadas -->
+            <h3>Configurações:</h3>
+            <hr class="div-row">
+            
+            <!-- Configurações relacionadas ao Sol -->
+            <div class="config-aspect">
+              <h4>Sol</h4>
+              <p>Massa do Sol</p>
+              <input type="number" id="sun_mass" value="1" step="0.1" />
+              <small>(em trilhões de kg)</small>
+            </div>
+            
+            <hr class="div-row">
+            
+            <!-- Configurações relacionadas ao Planeta -->
+            <div class="config-aspect">
+              <h4>Planeta</h4>
+              <p>Nome</p>
+              <input type="text" id="planet_name" value="Planet" />
+              <p>Massa</p>
+              <input type="number" id="planet_mass" value="0.0301" step="0.01" />
+              <small>(em trilhões de kg)</small>
+              <p>Posição X</p>
+              <input type="number" id="planet_x" value="0" step="0.1" />
+              <small>(1 unidade = 149.6 milhões de metros)</small>
+              <p>Posição Y</p>
+              <input type="number" id="planet_y" value="0" step="0.1" />
+              <small>(1 unidade = 149.6 milhões de metros)</small>
+              <p>Velocidade X</p>
+              <input type="number" id="planet_u" value="0" step="0.1" />
+              <small>(em 0.1 unidade de distância/medida de tempo)</small>
+              <p>Velocidade Y</p>
+              <input type="number" id="planet_v" value="0" step="0.1" />
+              <small>(em 0.1 unidade de distância/medida de tempo)</small>
+              <button class="config-btn" id="add_planet">Adicionar Planeta</button>
+            </div>
+            
+            <hr class="div-row">
+            
+            <!-- Configurações relacionadas ao Foguete -->
+            <div class="config-aspect">
+              <h4>Foguete</h4>
+              <p>Posição X</p>
+              <input type="number" id="rocket_x" value="0" step="0.1" />
+              <small>(1 unidade = 149.6 milhões de metros)</small>
+              <p>Posição Y</p>
+              <input type="number" id="rocket_y" value="0" step="0.1" />
+              <small>(1 unidade = 149.6 milhões de metros)</small>
+              <p>Velocidade X</p>
+              <input type="number" id="rocket_u" value="0" step="0.1" />
+              <small>(em 0.1 unidade de distância/medida de tempo)</small>
+              <p>Velocidade Y</p>
+              <input type="number" id="rocket_v" value="0" step="0.1" />
+              <small>(em 0.1 unidade de distância/medida de tempo)</small>
+              <button class="config-btn" id="update_rocket">Atualizar Foguete</button>
+            </div>
+          </div>
+        </hr>
+      </div>
+    </div>
+    <!-- Importação do script JS -->
+    <script src="orbit-precalculations.js"></script>
+  </body>
+</html>

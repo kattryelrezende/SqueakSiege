@@ -1,0 +1,113 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Mantém as partículas no fundo */
+  filter: blur(1.2px);
+  transform: scale(1.1);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%; /* Expande completamente */
+  }
+}
+
+@keyframes blink {
+  from {
+    border-color: white;
+  }
+  to {
+    border-color: transparent;
+  }
+}
+
+/* Letreiro e botão */
+#text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  z-index: 1;
+}
+
+#typewriter {
+  font-size: 3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  animation: blink 0.5s step-end infinite; /* Anima apenas o cursor */
+}
+
+@keyframes blink {
+  from {
+    border-color: white;
+  }
+  to {
+    border-color: transparent;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%; /* Permite que toda a frase seja exibida */
+  }
+}
+
+.logo {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+#transition-button {
+  background: transparent;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 50px;
+  text-align: center;
+  text-transform: uppercase;
+  background-size: 200% auto;
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
+  box-shadow: 0 0 5px #fafafa;
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease-in, scale 0.3s ease-in;
+  text-decoration: none;
+  font-size: 2rem;
+  font-family: Arial, sans-serif;
+  font-weight: bolder;
+}
+
+#transition-button.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#transition-button:hover {
+    scale: 1.05;
+}
