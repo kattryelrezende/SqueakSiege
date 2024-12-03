@@ -89,4 +89,7 @@ F = G (m_1 m_2)/(r^2 + ε)
 ### 2. **Execução**
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/simulador-gravitacional.git
+   git clone https://github.com/Mvcart/SqueakSiege
+2. Execute o comando na raiz do projeto:
+   ```bash
+   make open
