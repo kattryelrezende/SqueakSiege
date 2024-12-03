@@ -13,9 +13,9 @@ Este é um simulador gravitacional em 2D desenvolvido em JavaScript, que utiliza
   - Massa do Sol.
   - Massa dos planetas.
   - Velocidade do foguete.
-  - Tamanho do passo de tempo (Δt).
+  - Tamanho do passo de tempo ($\Delta t$).
   - Número de pré-cálculos da trajetória do foguete.
-  - Constante gravitacional **G**.
+  - Constante gravitacional **$G$**.
 - Visualização da trajetória futura do foguete.
 - Renderização de corpos celestes e suas interações no canvas.
 
@@ -26,31 +26,31 @@ Este é um simulador gravitacional em 2D desenvolvido em JavaScript, que utiliza
 ### 1. **Leis Físicas**
 A simulação utiliza a fórmula da força gravitacional:
 
-<img src="https://latex.codecogs.com/gif.latex?O_t=\F = G (m_1 m_2)/(r^2)" /> 
+$F = G \cdot \dfrac{(m_1 m_2)}{(r^2)}$
 
 Onde:
-- F: força gravitacional.
-- G: constante gravitacional.
-- m_1, m_2: massas dos corpos.
-- r: distância entre os corpos.
+- $F$: força gravitacional.
+- $G$: constante gravitacional.
+- $m_1$, m_2$: massas dos corpos.
+- $r$: distância entre os corpos.
 
 A aceleração é calculada como:
 
-a = F/m
+$a$ = $\dfrac{F}{m}$
 
 ### 2. **Método de Euler**
 O simulador usa o **método de Euler** para calcular as trajetórias dos corpos:
 - Atualiza a velocidade com base na aceleração:
   
-  v_(nova) = v_(atual) + a * Δt
+  $v_(nova) = v_(atual) + a \cdot \Delta t$
   
 - Atualiza a posição com base na velocidade:
   
-  x_(nova) = x_(atual) + v_(atual) * Δ t
+  $x_(nova) = x_(atual) + v_(atual) \cdot \Delta t$
 
-#### **Δt e Precisão**
-- Quanto menor o valor de Δt, mais precisa será a simulação.
-- Valores grandes de Δt podem tornar a simulação imprecisa, especialmente para forças que mudam rapidamente.
+#### **$\Delta t$ e Precisão**
+- Quanto menor o valor de $\Delta t$, mais precisa será a simulação.
+- Valores grandes de $\Delta t$ podem tornar a simulação imprecisa, especialmente para forças que mudam rapidamente.
 
 ---
 
@@ -58,7 +58,7 @@ O simulador usa o **método de Euler** para calcular as trajetórias dos corpos:
 Uma **singularidade** ocorre quando a distância 
 (r) entre dois corpos se aproxima de zero, resultando em uma força gravitacional infinita. Para evitar isso, o simulador adiciona uma pequena constante ε ao cálculo:
 
-F = G (m_1 m_2)/(r^2 + ε)
+$F = G \dfrac{(m_1 m_2)}{(r^2 + \episilon )}$
 
 ---
 
@@ -66,18 +66,18 @@ F = G (m_1 m_2)/(r^2 + ε)
 
 ### **Teclado**
 - **Espaço**: Pausar/continuar a simulação.
-- **H**: Aumentar a velocidade horizontal do foguete para a esquerda.
-- **J**: Aumentar a velocidade vertical para baixo.
-- **K**: Aumentar a velocidade vertical para cima.
-- **L**: Aumentar a velocidade horizontal para a direita.
+- **$H$**: Aumentar a velocidade horizontal do foguete para a esquerda.
+- **$J$**: Aumentar a velocidade vertical para baixo.
+- **$K$**: Aumentar a velocidade vertical para cima.
+- **$L$**: Aumentar a velocidade horizontal para a direita.
 
 ### **Sliders e Inputs**
 - **Massa do Sol**: Ajusta a massa do Sol.
 - **Massa dos Planetas**: Ajusta a massa dos planetas.
 - **Velocidade do Foguete**: Controla a velocidade do foguete.
 - **Número de Pré-Cálculos**: Define a quantidade de cálculos para a trajetória futura do foguete.
-- **Tamanho do Passo de Tempo (Δt)**: Controla a precisão da simulação.
-- **Constante Gravitacional (G)**: Ajusta a intensidade da gravidade.
+- **Tamanho do Passo de Tempo ($\Delta t$)**: Controla a precisão da simulação.
+- **Constante Gravitacional ($G$)**: Ajusta a intensidade da gravidade.
 
 ---
 
